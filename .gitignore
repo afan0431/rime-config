@@ -1,0 +1,17 @@
+# 每台设备部署时自动生成
+build/
+
+# 用户词频库（LevelDB，不适合放进 git；多设备同步词频请用 Rime 自带的「用户资料同步」）
+*.userdb/
+sync/
+
+# 设备专属（安装 ID、上次部署时间等）
+installation.yaml
+user.yaml
+
+# 语法模型 400MB，超过 GitHub 单文件上限，由 setup-new-device.ps1 单独下载
+*.gram
+
+# 本机备份
+_备份_*/
+*.bak

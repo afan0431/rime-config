@@ -1,0 +1,76 @@
+# weasel.custom.yaml —— 胭脂主题（基于 Rime 主题工坊「胭脂」微调）
+# 颜色格式 ABGR：0xAABBGGRR（AA=透明度，BB=蓝，GG=绿，RR=红）
+# 改完右键小狼毫图标 →「重新部署」生效
+patch:
+  "style/color_scheme": rouge_light
+  "style/color_scheme_dark": rouge_dark
+
+  # 字体：emoji 用彩色 Segoe UI Emoji，其余用霞鹜文楷（优先屏幕阅读版，没装就用普通版）
+  "style/font_face": "Segoe UI Emoji:1f000:1faff, Segoe UI Emoji:2600:27bf, LXGW WenKai Screen, LXGW WenKai, Microsoft YaHei"
+  "style/label_font_face": "LXGW WenKai Screen, LXGW WenKai, Microsoft YaHei"
+  "style/comment_font_face": "LXGW WenKai Screen, LXGW WenKai, Microsoft YaHei"
+  "style/font_point": 13
+  "style/label_font_point": 11
+  "style/comment_font_point": 11
+
+  "style/horizontal": true           # 横排
+  "style/inline_preedit": false      # 拼音显示在候选框第一行（不写进输入框，游戏里也看得到）
+  "style/label_format": "%s"         # 序号不带点
+  "style/mark_text": ""              # 选中项左侧显示 Win11 风格竖条
+
+  # 尺寸：比原版紧凑一些
+  "style/layout/margin_x": 10
+  "style/layout/margin_y": 8
+  "style/layout/spacing": 6          # 拼音行与候选行的间距
+  "style/layout/candidate_spacing": 6
+  "style/layout/border": 1
+  "style/layout/border_width": 1
+  "style/layout/corner_radius": 10
+  "style/layout/round_corner": 7
+  "style/layout/hilite_spacing": 4
+  "style/layout/hilite_padding": 5
+  "style/layout/hilite_padding_x": 7
+  "style/layout/hilite_padding_y": 4
+  "style/layout/shadow_radius": 8
+  "style/layout/shadow_offset_x": 0
+  "style/layout/shadow_offset_y": 3
+
+  "preset_color_schemes/rouge_light":
+    name: "胭脂（亮）"
+    author: "rime-theme / 微调"
+    back_color: 0xEEF5FA                   # 背景：暖米白
+    border_color: 0xD5E2EE                 # 边框
+    shadow_color: 0x2E28446B               # 阴影（调淡）
+    text_color: 0x5A4E48                   # 拼音行文字
+    hilited_text_color: 0x392F8C           # 拼音行当前段
+    hilited_back_color: 0xDCE3F3           # 拼音行当前段背景
+    label_color: 0x8C9AB0                  # 序号
+    candidate_text_color: 0x2A2E3A         # 候选字
+    comment_text_color: 0x96A3B9           # 注释
+    hilited_candidate_text_color: 0x30257C # 选中候选字：胭脂红
+    hilited_candidate_back_color: 0xD3D6F0 # 选中候选背景：淡胭脂
+    hilited_label_color: 0x574BC1          # 选中序号
+    hilited_comment_text_color: 0x7A70C1   # 选中注释
+    hilited_mark_color: 0x574BC1           # 选中竖条
+    prevpage_color: 0x8C9AB0               # 翻页箭头
+    nextpage_color: 0x8C9AB0
+
+  "preset_color_schemes/rouge_dark":
+    name: "胭脂（暗）"
+    author: "rime-theme"
+    back_color: 0x1B1C24
+    border_color: 0x262733
+    shadow_color: 0x73000000
+    text_color: 0xD4DCE8
+    hilited_text_color: 0xBDB8F2
+    hilited_back_color: 0x292A38
+    label_color: 0x7C8498
+    candidate_text_color: 0xD4DCE8
+    comment_text_color: 0x6A7084
+    hilited_candidate_text_color: 0xDCD9FF
+    hilited_candidate_back_color: 0x66343057
+    hilited_label_color: 0x938AE0
+    hilited_comment_text_color: 0x938AE0
+    hilited_mark_color: 0x938AE0
+    prevpage_color: 0x7C8498
+    nextpage_color: 0x7C8498

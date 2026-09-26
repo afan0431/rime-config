@@ -1,0 +1,20 @@
+# 万象拼音个人设置（放在用户文件夹根目录，更新万象时不会被覆盖）
+patch:
+  speller/algebra:
+    __patch:
+      - wanxiang_algebra:/base/全拼   # 输入方式：全拼
+      - wanxiang_algebra:/26jian
+
+  # 候选词个数：9 个
+  # 注意：万象原本用 7 8 9 0 输入声调来筛字；候选设为 9 个后，7/8/9 用来选第 7~9 个候选，0 仍可当第四声用
+  menu/page_size: 9
+
+  # 自定义短语（闲鱼客服快捷短语），用自己的文件名，更新时不会被覆盖
+  custom_phrase/dictionary: wanxiang_phrase_my
+
+  # 挂载最终幻想14 专有词库 ff14.dict.yaml
+  translator/packs:
+    - ff14
+
+  # 候选里直接出 emoji（例如打 kaixin 会出现 😊）；想关掉：按 F4 打开方案菜单切换「表情开/关」
+  "switches/@3/reset": 1

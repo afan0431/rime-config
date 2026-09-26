@@ -1,0 +1,6 @@
+patch:
+  speller/algebra:
+    __patch:
+      - wanxiang_algebra:/26jian
+  # 与 wanxiang.custom.yaml 中的 custom_phrase/dictionary 保持一致
+  translator/dictionary: wanxiang_phrase_my
