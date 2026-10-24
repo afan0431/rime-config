@@ -1,0 +1,70 @@
+# squirrel.custom.yaml —— 胭脂主题（从 Windows 上的 weasel.custom.yaml 移植）
+# 颜色格式 ABGR：0xAABBGGRR（AA=透明度，BB=蓝，GG=绿，RR=红），与小狼毫相同
+# 改完点菜单栏输入法图标 →「重新部署」生效
+patch:
+  # Windows 用的是浅色模式，所以深色模式下也用亮色胭脂；想跟随系统变暗，把下一行改成 rouge_dark
+  "style/color_scheme": rouge_light
+  "style/color_scheme_dark": rouge_light
+
+  # 字体：macOS 默认中文字体苹方；emoji 由系统自动用 Apple Color Emoji
+  # 小狼毫 13pt / 11pt 在 Windows 96dpi 下约等于 macOS 的 17 / 14
+  "style/font_face": "PingFang SC"
+  "style/label_font_face": "PingFang SC"
+  "style/comment_font_face": "PingFang SC"
+  "style/preedit_font_face": "PingFang SC"
+  "style/font_point": 17
+  "style/label_font_point": 14
+  "style/comment_font_point": 14
+  "style/preedit_font_point": 14
+
+  "style/candidate_list_layout": linear  # 横排
+  "style/text_orientation": horizontal
+  "style/inline_preedit": true           # 拼音直接写进输入框（和系统输入法一样），候选框只留一行候选
+  "style/inline_candidate": false
+  "style/candidate_format": "[label] [candidate] [comment]"  # 序号不带点
+
+  # 尺寸——鼠须管的几何和小狼毫不同（见 rime/squirrel sources/SquirrelView.swift）：
+  #   面板内边距 = border + corner_radius
+  #   高亮块外缘距面板边 = (hilited_corner_radius + min(border_width, border_height)) / 2
+  #   高亮块内文字留白 = 内边距 - 上面这个值
+  # 下面的取值：面板圆角 = 选中项圆角 = 10，面板边→高亮 ≈ 5
+  "style/border_width": 2
+  "style/border_height": 0
+  "style/corner_radius": 10              # 候选框圆角，与选中项圆角一致
+  "style/hilited_corner_radius": 10      # 选中项圆角
+  "style/spacing": 4                     # 拼音行与候选行的间距
+  "style/line_spacing": 0               # 横排只有一行候选，不需要段后间距（否则文字偏上）
+  "style/base_offset": -0.5              # 基线微调，让候选字在高亮块里上下居中（截图实测）
+  "style/surrounding_extra_expansion": 0
+  "style/shadow_size": 0                 # 鼠须管的 shadow_size 是选中项阴影，不是窗口阴影，关掉
+  "style/translucency": false
+  "style/show_paging": false
+
+  "preset_color_schemes/rouge_light":
+    name: "胭脂（亮）"
+    author: "rime-theme / 微调"
+    back_color: 0xEEF5FA                   # 背景：暖米白
+    # 不设 border_color：鼠须管的边框线宽 = min(border_width, border_height)，会画成粗边框
+    text_color: 0x5A4E48                   # 拼音行文字
+    hilited_text_color: 0x392F8C           # 拼音行当前段文字（不设底色，拼音就是一行普通小字）
+    label_color: 0x8C9AB0                  # 序号
+    candidate_text_color: 0x2A2E3A         # 候选字
+    comment_text_color: 0x96A3B9           # 注释
+    hilited_candidate_text_color: 0x30257C # 选中候选字：胭脂红
+    hilited_candidate_back_color: 0xD3D6F0 # 选中候选背景：淡胭脂
+    hilited_candidate_label_color: 0x574BC1 # 选中序号
+    hilited_comment_text_color: 0x7A70C1   # 选中注释
+
+  "preset_color_schemes/rouge_dark":
+    name: "胭脂（暗）"
+    author: "rime-theme"
+    back_color: 0x1B1C24
+    text_color: 0xD4DCE8
+    hilited_text_color: 0xBDB8F2
+    label_color: 0x7C8498
+    candidate_text_color: 0xD4DCE8
+    comment_text_color: 0x6A7084
+    hilited_candidate_text_color: 0xDCD9FF
+    hilited_candidate_back_color: 0x66343057
+    hilited_candidate_label_color: 0x938AE0
+    hilited_comment_text_color: 0x938AE0

@@ -18,3 +18,11 @@ patch:
 
   # 候选里直接出 emoji（例如打 kaixin 会出现 😊）；想关掉：按 F4 打开方案菜单切换「表情开/关」
   "switches/@3/reset": 1
+
+  # 按住 Shift 打的大写字母直接上屏，不进候选（万象原本 A-Z 都能开始编码）
+  # 保留 V（计算器）R（金额大写）N（日期）U（Unicode）和 /（/sym 等命令）作为起始字符
+  # 已经在打拼音时，中途的大写字母仍会进入编码（alphabet 未改）
+  speller/initials: "zyxwvutsrqponmlkjihgfedcbaVURN/"
+
+  # 数字后面的 . , : 立即上屏为半角，不再停在编码区（1. 编号、3.14、12:30 都能直接打）
+  punctuator/digit_separator_action: commit
